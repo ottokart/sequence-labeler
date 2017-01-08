@@ -82,6 +82,7 @@ class SequenceLabeler(object):
         output_vars = [cost, predicted_labels]
         self.train = theano.function(input_vars_train, output_vars, updates=updates, on_unused_input='ignore', allow_input_downcast = True)
         self.test = theano.function(input_vars_test, output_vars, on_unused_input='ignore', allow_input_downcast = True)
+        self.predict = theano.function([word_ids, char_ids, char_mask], predicted_labels, on_unused_input='ignore', allow_input_downcast = True)
 
     def create_parameter_matrix(self, name, size):
         param_vals = numpy.asarray(self.rng.normal(loc=0.0, scale=0.1, size=size), dtype=floatX)
