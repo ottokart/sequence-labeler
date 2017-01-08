@@ -1,3 +1,20 @@
+A fork from https://github.com/marekrei/sequence-labeler to enable punctuation restoration in unsegmented text.
+
+## Performance on English TED talks
+(Training set size: 2.1M words)
+
+PUNCTUATION      | PRECISION | RECALL    | F-SCORE
+--- | --- | --- | ---
+,COMMA           | 58.5 | 58.7 | 58.6
+?QUESTIONMARK    | 71.4 | 54.3 | 61.7
+.PERIOD          | 69.9 | 72.0 | 70.9
+_Overall_        | _64.3_ | _64.9_ | _64.6_
+
+Performance is very similar (even slightly better) to https://github.com/ottokart/punctuator2 although they are not directly comparable as punctuator2 used pretrained embeddings that were trained on much less data and had much smaller size. More details can be found [here](http://www.isca-speech.org/archive/Interspeech_2016/pdfs/1517.PDF).
+
+Original README:
+=========================
+
 Sequence labeler
 =========================
 
